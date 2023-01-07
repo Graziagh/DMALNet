@@ -32,7 +32,6 @@ normal = pd.read_excel(r"E:\dataset\archive\COVID-19_Radiography_Dataset\Normal.
 # normal.head()
 viral_pneumonia = pd.read_excel(r"E:\dataset\archive\COVID-19_Radiography_Dataset\Viral Pneumonia.metadata.xlsx")
 viral_pneumonia.head()
-# Lung_Opacity = pd.read_excel(r"E:\医学图像数据集\archive\COVID-19_Radiography_Dataset\Lung_Opacity.metadata.xlsx")
 # Lung_Opacity.head()
 
 

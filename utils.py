@@ -27,16 +27,15 @@ class AverageMeter(object):
 def cal_metrics(confusion_matrix):
     n_classes = confusion_matrix.shape[0]
     metrics_result = []
-    for i in range(n_classes):
-        # 逐步获取 真阳，假阳，真阴，假阴四个指标，并计算三个参数
+    for i in range(n_classes):     
         ALL = np.sum(confusion_matrix)
-        # 对角线上是正确预测的
+        
         TP = confusion_matrix[i, i]
-        # 列加和减去正确预测是该类的假阳
+        
         FP = np.sum(confusion_matrix[:, i]) - TP
-        # 行加和减去正确预测是该类的假阴
+        
         FN = np.sum(confusion_matrix[i, :]) - TP
-        # 全部减去前面三个就是真阴
+        
         TN = ALL - TP - FP - FN
         # precision, sensitivity, f1_score, specificity
         metrics_result.append([TP/(TP+FP), TP/(TP+FN), (2*TP)/(2*TP+FN+FP), TN/(TN+FP)])
