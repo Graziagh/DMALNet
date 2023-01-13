@@ -79,7 +79,7 @@ loader_test = DataLoader(dataset_test, batch_size=args.batch_size, shuffle=False
 first_model = ResidualNet(network_type="ImageNet", depth=50, num_classes=3, att_type='CBAM')
 second_model = arlnet50(pretrained=True)
 fusion_model = model_fusion(4096)
-temp_model = DMAL(256)
+temp_model = Integration(256)
 
 # optimizer
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

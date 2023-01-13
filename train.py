@@ -98,7 +98,7 @@ elif args.combine == 'DD':
     second_model = densenet121_cbam()
     fusion_model = model_fusion(2048)
 
-temp_model = DMAL(256)
+temp_model = Integration(256)
 
 # optimizer
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
