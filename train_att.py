@@ -76,8 +76,8 @@ loader_val = DataLoader(dataset_val, batch_size=args.batch_size, shuffle=False, 
 loader_test = DataLoader(dataset_test, batch_size=args.batch_size, shuffle=False, num_workers=args.workers)
 
 # model component
-first_model = ResidualNet(network_type="ImageNet", depth=50, num_classes=3, att_type='CBAM')
-second_model = arlnet50(pretrained=True)
+first_model = arlnet50(pretrained=True)
+second_model = ResidualNet(network_type="ImageNet", depth=50, num_classes=3, att_type='CBAM')
 fusion_model = model_fusion(4096)
 temp_model = Integration(256)
 
